@@ -1,5 +1,7 @@
 # CertGate — certified stability of gating-based explanations
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23588601.svg)](https://doi.org/10.5281/zenodo.23588601)
+
 Supplementary code and results for "Certified Stability of Gating-Based Explanations: Exact Certificates and Fundamental Limits for Takagi–Sugeno–Kang and Mixture-of-Experts Models".
 
 ## Package (`certgate/`)
@@ -34,6 +36,9 @@ export CERTGATE_DATA=/path/to/jb_datasets
 python run_full.py 0 1 && python analyze_full.py
 ```
 CPU only, float64 (JAX x64). The full study takes roughly 10 CPU-hours; scripts write one file per dataset/seed (or fold) and resume after interruption.
+
+## How to cite
+Please cite the paper and the archived software: R. Imamguluyev, "CertGate: Certified stability of gating-based explanations (code and results)," Zenodo, v1.0.0, 2026, doi:10.5281/zenodo.23588601.
 
 ## License
 MIT (see `LICENSE`).

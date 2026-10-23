@@ -6,5 +6,7 @@ authors:
     given-names: Rahib
     orcid: "https://orcid.org/0000-0002-3998-7901"
 version: 1.0.0
+doi: 10.5281/zenodo.23588601
+repository-code: "https://github.com/rahibaydinoglu-byte/certgate"
 date-released: 2026-10-22
 license: MIT
