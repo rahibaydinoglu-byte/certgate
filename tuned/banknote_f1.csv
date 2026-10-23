@@ -1,0 +1,15 @@
+dataset,fold,exp,model,acc,cfg,cert_exact_0.02,lam,rules_used,cert_exact_0.01,cert_exact_0.05
+banknote,1,tuned,LR,0.9745454545454545,{'C': 2.8208481899042},,,,,
+banknote,1,tuned,RF,1.0,"{'max_depth': None, 'max_features': 1.0, 'min_samples_leaf': 1}",,,,,
+banknote,1,tuned,HGB,0.9963636363636363,"{'learning_rate': 0.025066029818557614, 'max_leaf_nodes': 31, 'l2_regularization': 0.1366566298920165}",,,,,
+banknote,1,tuned,MLP,1.0,"{'hidden_layer_sizes': (64, 64), 'alpha': 0.000323920983504692, 'learning_rate_init': 0.001211448090294554}",,,,,
+banknote,1,tuned,TSK-prod,1.0,"{'R': 8, 'lr': 0.03, 'wd': 0.01, 'steps': 1000}",0.72,,,,
+banknote,1,tuned,TSK-prod-cert,1.0,"{'R': 4, 'lr': 0.01, 'wd': 0.001, 'steps': 2000}",0.9672727272727273,,,,
+banknote,1,tuned,TSK-min-cert,0.9927272727272727,"{'R': 8, 'lr': 0.01, 'wd': 0.0001, 'steps': 1000}",0.9272727272727272,,,,
+banknote,1,tuned,MoE-lin-cert,1.0,"{'R': 8, 'lr': 0.03, 'wd': 0.001, 'steps': 2000}",0.8836363636363637,,,,
+banknote,1,R8,tsk_prod,1.0,,0.6654545454545454,0.0,8.0,0.8254545454545454,0.24
+banknote,1,R8,tsk_prod,1.0,,0.9272727272727272,0.3,8.0,0.9709090909090909,0.6072727272727273
+banknote,1,R8,tsk_min,0.9963636363636363,,0.7018181818181818,0.0,8.0,0.88,0.33454545454545453
+banknote,1,R8,tsk_min,0.9963636363636363,,0.9236363636363636,0.3,8.0,0.9563636363636364,0.64
+banknote,1,R8,moe_lin,1.0,,0.7709090909090909,0.0,8.0,0.9018181818181819,0.4727272727272727
+banknote,1,R8,moe_lin,1.0,,0.8727272727272727,0.3,8.0,0.9381818181818182,0.5745454545454546

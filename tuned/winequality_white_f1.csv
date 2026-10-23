@@ -1,0 +1,15 @@
+dataset,fold,exp,model,acc,cfg,cert_exact_0.02,lam,rules_used,cert_exact_0.01,cert_exact_0.05
+winequality_white,1,tuned,LR,0.7346938775510204,{'C': 2.8208481899042},,,,,
+winequality_white,1,tuned,RF,0.8224489795918367,"{'max_depth': None, 'max_features': 1.0, 'min_samples_leaf': 1}",,,,,
+winequality_white,1,tuned,HGB,0.7795918367346939,"{'learning_rate': 0.025066029818557614, 'max_leaf_nodes': 31, 'l2_regularization': 0.1366566298920165}",,,,,
+winequality_white,1,tuned,MLP,0.7612244897959184,"{'hidden_layer_sizes': (64, 64), 'alpha': 1.5182824066780186e-05, 'learning_rate_init': 0.0010896624603686535}",,,,,
+winequality_white,1,tuned,TSK-prod,0.7755102040816326,"{'R': 8, 'lr': 0.01, 'wd': 0.01, 'steps': 2000}",0.17755102040816326,,,,
+winequality_white,1,tuned,TSK-prod-cert,0.75,"{'R': 4, 'lr': 0.01, 'wd': 0.0001, 'steps': 1000}",0.8561224489795919,,,,
+winequality_white,1,tuned,TSK-min-cert,0.7520408163265306,"{'R': 4, 'lr': 0.03, 'wd': 0.001, 'steps': 1000}",0.9336734693877551,,,,
+winequality_white,1,tuned,MoE-lin-cert,0.7602040816326531,"{'R': 8, 'lr': 0.01, 'wd': 0.0001, 'steps': 2000}",0.7428571428571429,,,,
+winequality_white,1,R8,tsk_prod,0.7642857142857142,,0.18775510204081633,0.0,8.0,0.4163265306122449,0.012244897959183673
+winequality_white,1,R8,tsk_prod,0.753061224489796,,0.7653061224489796,0.3,8.0,0.8846938775510204,0.41836734693877553
+winequality_white,1,R8,tsk_min,0.7520408163265306,,0.23265306122448978,0.0,8.0,0.49489795918367346,0.03571428571428571
+winequality_white,1,R8,tsk_min,0.7520408163265306,,0.7448979591836735,0.3,8.0,0.8704081632653061,0.4122448979591837
+winequality_white,1,R8,moe_lin,0.7489795918367347,,0.48367346938775513,0.0,8.0,0.7193877551020408,0.12142857142857143
+winequality_white,1,R8,moe_lin,0.7612244897959184,,0.7275510204081632,0.3,8.0,0.860204081632653,0.4020408163265306
