@@ -1,0 +1,15 @@
+dataset,fold,exp,model,acc,cfg,cert_exact_0.02,lam,rules_used,cert_exact_0.01,cert_exact_0.05
+winequality_red,2,tuned,LR,0.75,{'C': 9.782486748529776},,,,,
+winequality_red,2,tuned,RF,0.825,"{'max_depth': 16, 'max_features': 0.5, 'min_samples_leaf': 2}",,,,,
+winequality_red,2,tuned,HGB,0.78125,"{'learning_rate': 0.07792242551568816, 'max_leaf_nodes': 15, 'l2_regularization': 0.0008791073731949183}",,,,,
+winequality_red,2,tuned,MLP,0.746875,"{'hidden_layer_sizes': (64, 64), 'alpha': 0.00016093312571365635, 'learning_rate_init': 0.004180019319553598}",,,,,
+winequality_red,2,tuned,TSK-prod,0.78125,"{'R': 4, 'lr': 0.003, 'wd': 0.0001, 'steps': 1000}",0.3125,,,,
+winequality_red,2,tuned,TSK-prod-cert,0.759375,"{'R': 8, 'lr': 0.003, 'wd': 0.0001, 'steps': 2000}",0.7125,,,,
+winequality_red,2,tuned,TSK-min-cert,0.7375,"{'R': 8, 'lr': 0.03, 'wd': 0.0001, 'steps': 2000}",0.7375,,,,
+winequality_red,2,tuned,MoE-lin-cert,0.73125,"{'R': 8, 'lr': 0.03, 'wd': 0.01, 'steps': 2000}",0.696875,,,,
+winequality_red,2,R8,tsk_prod,0.715625,,0.3875,0.0,8.0,0.653125,0.0875
+winequality_red,2,R8,tsk_prod,0.734375,,0.728125,0.3,8.0,0.871875,0.26875
+winequality_red,2,R8,tsk_min,0.771875,,0.478125,0.0,8.0,0.690625,0.090625
+winequality_red,2,R8,tsk_min,0.75625,,0.671875,0.3,8.0,0.85,0.31875
+winequality_red,2,R8,moe_lin,0.75,,0.546875,0.0,8.0,0.753125,0.18125
+winequality_red,2,R8,moe_lin,0.7125,,0.69375,0.3,8.0,0.884375,0.346875
