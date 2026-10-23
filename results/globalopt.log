@@ -1,0 +1,8 @@
+pairs checked: 1440
+optimiser below exact (would mean exact is wrong) by > 1e-8: 0
+sign disagreements: 0
+                  mean           50%           max
+family                                            
+moe_lin   9.046359e-07  2.731149e-14  1.516895e-05
+tsk_min   6.583516e-11  1.351097e-11  3.237972e-09
+tsk_prod  2.921733e-05  2.513545e-13  5.263771e-03

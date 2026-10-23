@@ -1,0 +1,128 @@
+{
+ "banknote": {
+  "source": "UCI via github.com/jbrownlee/Datasets/banknote_authentication.csv",
+  "sha256": "d0539aaed2139ba7a587b3e34fb345ce503ff7d5d33dbf9912d8e195ce425cb9",
+  "n": 1372,
+  "d": 4,
+  "K": 2
+ },
+ "breast_w": {
+  "source": "UCI via github.com/jbrownlee/Datasets/breast-cancer-wisconsin.csv",
+  "sha256": "9c9dc50e62dbcece16e5707bdec7514f87230d0aa35798b9aaffbc77cf736f1f",
+  "n": 683,
+  "d": 9,
+  "K": 2
+ },
+ "ecoli": {
+  "source": "UCI via github.com/jbrownlee/Datasets/ecoli.csv",
+  "sha256": "26836c66779f5ce2b0c4d21c0667dcfb89f2a408e3cdac7e38dbc63e0abd5691",
+  "n": 336,
+  "d": 7,
+  "K": 5
+ },
+ "glass": {
+  "source": "UCI via github.com/jbrownlee/Datasets/glass.csv",
+  "sha256": "1b7039aa2d617c1827e790b55d45ac138dce06b5f2a3fb6c25f2f135b59ad2d0",
+  "n": 214,
+  "d": 9,
+  "K": 5
+ },
+ "haberman": {
+  "source": "UCI via github.com/jbrownlee/Datasets/haberman.csv",
+  "sha256": "b4b7a32586a5668f9f4d6dc8be9d1bc8cd4822523affb1f6b5bfc350681ef3e2",
+  "n": 306,
+  "d": 3,
+  "K": 2
+ },
+ "ionosphere": {
+  "source": "UCI via github.com/jbrownlee/Datasets/ionosphere.csv",
+  "sha256": "fd6dd7864b55d56dac0a1e6e24af9ccc35bf2555ac79af8ab9f3d1daa065ab83",
+  "n": 351,
+  "d": 33,
+  "K": 2
+ },
+ "mammography": {
+  "source": "UCI via github.com/jbrownlee/Datasets/mammography.csv",
+  "sha256": "7d3dea3f075f30bbdbb8980e7725684059b4fe3d0f850fadd0f635f6993d8730",
+  "n": 11183,
+  "d": 6,
+  "K": 2
+ },
+ "new_thyroid": {
+  "source": "UCI via github.com/jbrownlee/Datasets/new-thyroid.csv",
+  "sha256": "b1e244cdb7764210cfbf2888c47a4a558c36acd3c5e25452c0255c09c0b2c0a0",
+  "n": 215,
+  "d": 5,
+  "K": 3
+ },
+ "oil_spill": {
+  "source": "UCI via github.com/jbrownlee/Datasets/oil-spill.csv",
+  "sha256": "acd090bfa475d6247183c53683a344235136e4e9133d99259ae7fe692870c0f0",
+  "n": 937,
+  "d": 47,
+  "K": 2
+ },
+ "phoneme": {
+  "source": "UCI via github.com/jbrownlee/Datasets/phoneme.csv",
+  "sha256": "eacbb9f7a2b2135d067bff28ed7b9adb760f61f5e91f375f91e22e7e42ace24d",
+  "n": 5404,
+  "d": 5,
+  "K": 2
+ },
+ "pima": {
+  "source": "UCI via github.com/jbrownlee/Datasets/pima-indians-diabetes.csv",
+  "sha256": "6bfe5d0f379d17a0e0819b996407e3c09bf80febd4287f2ed212190dfff154af",
+  "n": 768,
+  "d": 8,
+  "K": 2
+ },
+ "sonar": {
+  "source": "UCI via github.com/jbrownlee/Datasets/sonar.csv",
+  "sha256": "3079c09b5d2789a0f96aff82c28e5164fafe2495c5f8da96c6c256c1bd25763f",
+  "n": 208,
+  "d": 60,
+  "K": 2
+ },
+ "wheat_seeds": {
+  "source": "UCI via github.com/jbrownlee/Datasets/wheat-seeds.csv",
+  "sha256": "8dbd1853a4439afc113cfe07f290422c7ce3fe48745d71f3f7eaa027cd38fd6e",
+  "n": 210,
+  "d": 7,
+  "K": 3
+ },
+ "wine": {
+  "source": "UCI via github.com/jbrownlee/Datasets/wine.csv",
+  "sha256": "e9c16b779f9194945067f65118da6afb317ef60c6515879c50124dc4f6cdd756",
+  "n": 178,
+  "d": 13,
+  "K": 3
+ },
+ "winequality_red": {
+  "source": "UCI via github.com/jbrownlee/Datasets/winequality-red.csv",
+  "sha256": "c9614512e980f1cbd221c796daa97f00c4898c3cd1716863abac60f6cd1a522e",
+  "n": 1599,
+  "d": 11,
+  "K": 2
+ },
+ "winequality_white": {
+  "source": "UCI via github.com/jbrownlee/Datasets/winequality-white.csv",
+  "sha256": "659d419fff887f225bf977d20520bb64a64cae203e460087f809721d4430ba27",
+  "n": 4898,
+  "d": 11,
+  "K": 2
+ },
+ "wdbc": {
+  "source": "sklearn.datasets.load_breast_cancer",
+  "sha256": null,
+  "n": 569,
+  "d": 30,
+  "K": 2
+ },
+ "digits": {
+  "source": "sklearn.datasets.load_digits",
+  "sha256": null,
+  "n": 1797,
+  "d": 61,
+  "K": 10
+ }
+}

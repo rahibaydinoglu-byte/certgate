@@ -1,0 +1,106 @@
+datasets: 18, seeds: [np.int64(0), np.int64(1), np.int64(2)], gated runs: 3240
+non-finite runs: 0 | MC flips on certified points (soundness): 0
+min rules used: 1 | runs with rules_used < R: 266
+selected R counts: {('moe_lin', 2.0): 123, ('moe_lin', 8.0): 75, ('moe_lin', 4.0): 72, ('tsk_min', 2.0): 128, ('tsk_min', 4.0): 71, ('tsk_min', 8.0): 71, ('tsk_prod', 2.0): 143, ('tsk_prod', 8.0): 68, ('tsk_prod', 4.0): 59}
+
+== exact vs baselines (dataset-level, all families and lambdas pooled per eps)
+  exact>ibp eps=0.01: n=216 mean gain 12.03 pp, median 5.17, min 0.00, max 73.36; p=2.51e-37, Holm p=1.03e-36
+  exact>lip eps=0.01: n=144 mean gain 0.44 pp, median 0.16, min 0.00, max 7.19; p=4.98e-20, Holm p=4.98e-20
+  exact>ibp eps=0.02: n=216 mean gain 19.25 pp, median 9.64, min 0.00, max 81.53; p=1.84e-37, Holm p=1.03e-36
+  exact>lip eps=0.02: n=144 mean gain 1.51 pp, median 0.52, min 0.00, max 38.91; p=1.17e-23, Holm p=2.33e-23
+  exact>ibp eps=0.05: n=216 mean gain 25.64 pp, median 12.28, min 0.04, max 83.95; p=1.71e-37, Holm p=1.03e-36
+  exact>lip eps=0.05: n=144 mean gain 5.01 pp, median 2.49, min 0.00, max 62.51; p=2.85e-25, Holm p=8.54e-25
+  per family, eps=0.02, lam=0:
+    tsk_prod exact-ibp: mean 6.98 pp, max 25.91 pp
+    tsk_prod exact-lip: mean 2.87 pp, max 6.80 pp
+    tsk_min exact-ibp: mean 2.95 pp, max 9.82 pp
+    moe_lin exact-ibp: mean 36.26 pp, max 74.54 pp
+    moe_lin exact-lip: mean 0.59 pp, max 2.32 pp
+
+== Monte-Carlo sampling check (100 uniform draws per point, eps=0.02)
+  tsk_prod: MC-stable 90.74% vs exact 85.57%; false stability claims 5.17% of test points (max per run 40.48%)
+  tsk_min: MC-stable 88.32% vs exact 86.96%; false stability claims 1.36% of test points (max per run 11.40%)
+  moe_lin: MC-stable 93.31% vs exact 89.20%; false stability claims 4.10% of test points (max per run 30.95%)
+
+== certification time per test fold (s), eps=0.02: median [max]
+  tsk_prod: exact 0.0053 [0.019], ibp 0.0033 [0.011], lip 0.0052 [0.018]
+  tsk_min: exact 0.0112 [0.048], ibp 0.0035 [0.020]
+  moe_lin: exact 0.0025 [0.016], ibp 0.0023 [0.008], lip 0.0027 [0.009]
+
+== stability training vs lam=0 (dataset-level, Wilcoxon, Holm within family)
+  tsk_prod lam=0.1 cert_exact_0.02: mean +0.1464 median +0.0831; p=1.14e-05 Holm=8.01e-05
+  tsk_prod lam=0.1 acc: mean +0.0022 median +0.0002; p=3.93e-01 Holm=7.94e-01
+  tsk_prod lam=0.1 radius_median: mean +0.0265 median +0.0260; p=7.63e-06 Holm=6.10e-05
+  tsk_prod lam=0.3 cert_exact_0.02: mean +0.1823 median +0.1092; p=1.14e-05 Holm=8.01e-05
+  tsk_prod lam=0.3 acc: mean +0.0029 median +0.0007; p=2.65e-01 Holm=7.94e-01
+  tsk_prod lam=0.3 radius_median: mean +0.0333 median +0.0326; p=9.54e-05 Holm=3.81e-04
+  tsk_prod lam=1.0 cert_exact_0.02: mean +0.1934 median +0.1224; p=3.81e-06 Holm=3.43e-05
+  tsk_prod lam=1.0 acc: mean +0.0032 median +0.0039; p=3.25e-01 Holm=7.94e-01
+  tsk_prod lam=1.0 radius_median: mean +0.0426 median +0.0429; p=5.34e-05 Holm=2.67e-04
+  tsk_min lam=0.1 cert_exact_0.02: mean +0.1077 median +0.0840; p=1.91e-05 Holm=1.53e-04
+  tsk_min lam=0.1 acc: mean +0.0035 median +0.0025; p=4.32e-02 Holm=1.30e-01
+  tsk_min lam=0.1 radius_median: mean +0.0138 median +0.0116; p=2.00e-03 Holm=1.20e-02
+  tsk_min lam=0.3 cert_exact_0.02: mean +0.1321 median +0.1015; p=7.63e-06 Holm=6.87e-05
+  tsk_min lam=0.3 acc: mean +0.0037 median +0.0036; p=8.54e-02 Holm=1.71e-01
+  tsk_min lam=0.3 radius_median: mean +0.0181 median +0.0215; p=1.92e-02 Holm=7.70e-02
+  tsk_min lam=1.0 cert_exact_0.02: mean +0.1396 median +0.1073; p=1.91e-05 Holm=1.53e-04
+  tsk_min lam=1.0 acc: mean +0.0043 median +0.0015; p=1.51e-01 Holm=1.71e-01
+  tsk_min lam=1.0 radius_median: mean +0.0217 median +0.0252; p=7.97e-03 Holm=3.98e-02
+  moe_lin lam=0.1 cert_exact_0.02: mean +0.0739 median +0.0421; p=3.81e-06 Holm=3.43e-05
+  moe_lin lam=0.1 acc: mean +0.0014 median +0.0015; p=2.23e-01 Holm=6.68e-01
+  moe_lin lam=0.1 radius_median: mean +0.0207 median +0.0196; p=3.81e-06 Holm=3.43e-05
+  moe_lin lam=0.3 cert_exact_0.02: mean +0.0875 median +0.0417; p=1.14e-05 Holm=5.72e-05
+  moe_lin lam=0.3 acc: mean +0.0015 median +0.0011; p=3.69e-01 Holm=7.38e-01
+  moe_lin lam=0.3 radius_median: mean +0.0327 median +0.0280; p=3.81e-06 Holm=3.43e-05
+  moe_lin lam=1.0 cert_exact_0.02: mean +0.0911 median +0.0491; p=1.14e-05 Holm=5.72e-05
+  moe_lin lam=1.0 acc: mean +0.0006 median +0.0017; p=6.40e-01 Holm=7.38e-01
+  moe_lin lam=1.0 radius_median: mean +0.0448 median +0.0379; p=3.81e-06 Holm=3.43e-05
+   model  lam    acc   cert  radius  rules
+tsk_prod  0.0 0.8788 0.7252  0.0697 3.8444
+tsk_prod  0.1 0.8811 0.8715  0.0963 3.7519
+tsk_prod  0.3 0.8817 0.9075  0.1030 3.7519
+tsk_prod  1.0 0.8820 0.9186  0.1123 3.7741
+ tsk_min  0.0 0.8715 0.7748  0.0910 4.0074
+ tsk_min  0.1 0.8750 0.8824  0.1048 3.9630
+ tsk_min  0.3 0.8753 0.9068  0.1091 3.9852
+ tsk_min  1.0 0.8758 0.9144  0.1127 3.9889
+ moe_lin  0.0 0.8760 0.8289  0.0885 4.1111
+ moe_lin  0.1 0.8774 0.9028  0.1092 4.1074
+ moe_lin  0.3 0.8776 0.9164  0.1212 4.1185
+ moe_lin  1.0 0.8767 0.9200  0.1333 4.1148
+
+== accuracy: Friedman p=1.67e-05; Nemenyi CD (alpha=0.05) = 3.193
+  MLP                          mean acc 0.8915  mean rank 3.17
+  RF                           mean acc 0.8989  mean rank 3.72
+  TSK-prod ($\lambda$=0.3)     mean acc 0.8817  mean rank 4.50
+  TSK-prod ($\lambda$=0)       mean acc 0.8788  mean rank 5.08
+  HGB                          mean acc 0.8896  mean rank 5.28
+  MoE-lin ($\lambda$=0.3)      mean acc 0.8776  mean rank 5.33
+  MoE-lin ($\lambda$=0)        mean acc 0.8760  mean rank 6.47
+  TSK-min ($\lambda$=0.3)      mean acc 0.8753  mean rank 6.61
+  TSK-min ($\lambda$=0)        mean acc 0.8715  mean rank 7.42
+  LR                           mean acc 0.8557  mean rank 7.42
+  MoE-lin ($\lambda$=0) vs LR: diff +0.0203; p=0.074, Holm=0.737
+  MoE-lin ($\lambda$=0) vs RF: diff -0.0228; p=0.010, Holm=0.156
+  MoE-lin ($\lambda$=0) vs HGB: diff -0.0136; p=0.265, Holm=1.000
+  MoE-lin ($\lambda$=0) vs MLP: diff -0.0155; p=0.000, Holm=0.001
+  MoE-lin ($\lambda$=0.3) vs LR: diff +0.0219; p=0.007, Holm=0.105
+  MoE-lin ($\lambda$=0.3) vs RF: diff -0.0213; p=0.081, Holm=0.737
+  MoE-lin ($\lambda$=0.3) vs HGB: diff -0.0121; p=0.495, Holm=1.000
+  MoE-lin ($\lambda$=0.3) vs MLP: diff -0.0139; p=0.004, Holm=0.080
+  TSK-min ($\lambda$=0) vs LR: diff +0.0158; p=0.246, Holm=1.000
+  TSK-min ($\lambda$=0) vs RF: diff -0.0274; p=0.006, Holm=0.101
+  TSK-min ($\lambda$=0) vs HGB: diff -0.0181; p=0.074, Holm=0.737
+  TSK-min ($\lambda$=0) vs MLP: diff -0.0200; p=0.000, Holm=0.001
+  TSK-min ($\lambda$=0.3) vs LR: diff +0.0196; p=0.048, Holm=0.579
+  TSK-min ($\lambda$=0.3) vs RF: diff -0.0236; p=0.016, Holm=0.223
+  TSK-min ($\lambda$=0.3) vs HGB: diff -0.0144; p=0.181, Holm=1.000
+  TSK-min ($\lambda$=0.3) vs MLP: diff -0.0162; p=0.001, Holm=0.018
+  TSK-prod ($\lambda$=0) vs LR: diff +0.0231; p=0.030, Holm=0.395
+  TSK-prod ($\lambda$=0) vs RF: diff -0.0201; p=0.048, Holm=0.579
+  TSK-prod ($\lambda$=0) vs HGB: diff -0.0108; p=0.468, Holm=1.000
+  TSK-prod ($\lambda$=0) vs MLP: diff -0.0127; p=0.006, Holm=0.101
+  TSK-prod ($\lambda$=0.3) vs LR: diff +0.0260; p=0.004, Holm=0.080
+  TSK-prod ($\lambda$=0.3) vs RF: diff -0.0171; p=0.246, Holm=1.000
+  TSK-prod ($\lambda$=0.3) vs HGB: diff -0.0079; p=0.640, Holm=1.000
+  TSK-prod ($\lambda$=0.3) vs MLP: diff -0.0098; p=0.001, Holm=0.018

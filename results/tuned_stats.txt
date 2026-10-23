@@ -1,0 +1,39 @@
+datasets: 18
+Friedman p=4.15e-02, CD=2.47
+  MLP            acc 0.8893 rank 3.03
+  RF             acc 0.8929 rank 3.97
+  TSK-prod-cert  acc 0.8847 rank 3.97
+  HGB            acc 0.8915 rank 4.33
+  TSK-prod       acc 0.8794 rank 4.89
+  MoE-lin-cert   acc 0.8762 rank 4.94
+  TSK-min-cert   acc 0.8781 rank 5.39
+  LR             acc 0.8648 rank 5.47
+  TSK-prod vs LR: +1.45 pp; p=0.284, Holm=1.000
+  TSK-prod vs RF: -1.35 pp; p=0.325, Holm=1.000
+  TSK-prod vs HGB: -1.22 pp; p=0.246, Holm=1.000
+  TSK-prod vs MLP: -1.00 pp; p=0.024, Holm=0.306
+  TSK-prod-cert vs LR: +1.99 pp; p=0.012, Holm=0.180
+  TSK-prod-cert vs RF: -0.82 pp; p=0.734, Holm=1.000
+  TSK-prod-cert vs HGB: -0.68 pp; p=0.899, Holm=1.000
+  TSK-prod-cert vs MLP: -0.46 pp; p=0.089, Holm=1.000
+  TSK-min-cert vs LR: +1.33 pp; p=0.276, Holm=1.000
+  TSK-min-cert vs RF: -1.48 pp; p=0.240, Holm=1.000
+  TSK-min-cert vs HGB: -1.34 pp; p=0.229, Holm=1.000
+  TSK-min-cert vs MLP: -1.12 pp; p=0.014, Holm=0.194
+  MoE-lin-cert vs LR: +1.14 pp; p=0.130, Holm=1.000
+  MoE-lin-cert vs RF: -1.67 pp; p=0.369, Holm=1.000
+  MoE-lin-cert vs HGB: -1.53 pp; p=0.468, Holm=1.000
+  MoE-lin-cert vs MLP: -1.31 pp; p=0.007, Holm=0.105
+tuned gated certified (mean over datasets): {'MoE-lin-cert': 87.6, 'TSK-min-cert': 89.4, 'TSK-prod': 65.2, 'TSK-prod-cert': 89.0}
+  TSK-prod-cert vs TSK-prod cert: +23.8 pp, p=7.63e-06
+
+fixed R=8:
+  tsk_prod: cert0.02 53.9 -> 81.9; acc 87.27 -> 87.82; rules 7.70 -> 7.54
+  tsk_min: cert0.02 61.2 -> 81.5; acc 86.72 -> 87.34; rules 7.74 -> 7.74
+  moe_lin: cert0.02 69.5 -> 82.9; acc 87.41 -> 87.67; rules 7.78 -> 7.71
+  tsk_prod cert: p=3.81e-06, Holm=2.29e-05
+  tsk_prod acc: p=1.17e-01, Holm=3.51e-01
+  tsk_min cert: p=3.81e-06, Holm=2.29e-05
+  tsk_min acc: p=2.46e-01, Holm=4.92e-01
+  moe_lin cert: p=3.81e-06, Holm=2.29e-05
+  moe_lin acc: p=3.04e-01, Holm=4.92e-01

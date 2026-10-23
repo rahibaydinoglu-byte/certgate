@@ -1,0 +1,122 @@
+== sanity: soundness violations / attack-missed (must be 0 / 0): 0 / 497 | non-finite runs: 0
+== exact certified fraction vs attack-stable at eps=0.02: max |diff| = 0.1650268336314849
+
+== Certified fraction (mean over datasets), by family, lam, eps
+eps=0.01
+              cert_exact_0.01  cert_ibp_0.01  cert_lip_0.01
+model    lam                                               
+moe_lin  0.0            0.910          0.635          0.906
+         0.3            0.955          0.684          0.954
+tsk_min  0.0            0.853          0.836            NaN
+         0.3            0.950          0.942            NaN
+tsk_prod 0.0            0.813          0.752          0.795
+         0.3            0.950          0.816          0.943
+eps=0.02
+              cert_exact_0.02  cert_ibp_0.02  cert_lip_0.02
+model    lam                                               
+moe_lin  0.0            0.821          0.416          0.816
+         0.3            0.906          0.451          0.904
+tsk_min  0.0            0.740          0.715            NaN
+         0.3            0.899          0.872            NaN
+tsk_prod 0.0            0.681          0.593          0.642
+         0.3            0.900          0.670          0.871
+eps=0.05
+              cert_exact_0.05  cert_ibp_0.05  cert_lip_0.05
+model    lam                                               
+moe_lin  0.0            0.612          0.126          0.599
+         0.3            0.746          0.141          0.739
+tsk_min  0.0            0.504          0.479            NaN
+         0.3            0.711          0.671            NaN
+tsk_prod 0.0            0.415          0.327          0.344
+         0.3            0.716          0.387          0.584
+Wilcoxon exact>ibp eps=0.01 (n=108, mean gain 0.128, min gain 0.000): p=5.94e-19, Holm p=2.38e-18
+Wilcoxon exact>lip eps=0.01 (n=72, mean gain 0.008, min gain 0.000): p=2.77e-10, Holm p=2.77e-10
+Wilcoxon exact>ibp eps=0.02 (n=108, mean gain 0.205, min gain 0.000): p=1.74e-19, Holm p=8.70e-19
+Wilcoxon exact>lip eps=0.02 (n=72, mean gain 0.019, min gain 0.000): p=2.47e-12, Holm p=4.94e-12
+Wilcoxon exact>ibp eps=0.05 (n=108, mean gain 0.262, min gain 0.000): p=1.25e-19, Holm p=7.50e-19
+Wilcoxon exact>lip eps=0.05 (n=72, mean gain 0.055, min gain 0.000): p=2.57e-13, Holm p=7.70e-13
+
+== Median certification time per test fold (s), eps=0.02
+          t_exact_0.02  t_ibp_0.02  t_lip_0.02
+model                                         
+moe_lin         0.0025      0.0023      0.0026
+tsk_min         0.0103      0.0035         NaN
+tsk_prod        0.0051      0.0032      0.0050
+
+== Stability training: lam=0 vs lam=0.3 (paired over datasets)
+tsk_prod: rules used (mean) lam0=3.93 lam0.3=3.96
+tsk_min: rules used (mean) lam0=3.98 lam0.3=3.93
+moe_lin: rules used (mean) lam0=3.98 lam0.3=3.98
+Wilcoxon tsk_prod cert_exact_0.02: mean change +0.219 (median +0.163): p=7.63e-06, Holm p=4.58e-05
+Wilcoxon tsk_prod acc: mean change +0.002 (median +0.000): p=5.14e-01, Holm p=1.00e+00
+Wilcoxon tsk_min cert_exact_0.02: mean change +0.159 (median +0.113): p=9.54e-05, Holm p=3.81e-04
+Wilcoxon tsk_min acc: mean change +0.005 (median +0.003): p=2.46e-01, Holm p=7.39e-01
+Wilcoxon moe_lin cert_exact_0.02: mean change +0.084 (median +0.071): p=2.67e-05, Holm p=1.34e-04
+Wilcoxon moe_lin acc: mean change -0.002 (median +0.000): p=7.60e-01, Holm p=1.00e+00
+
+== Accuracy (mean over folds), Friedman over datasets
+mean acc: {'RF': 0.895, 'MLP': 0.891, 'HGB': 0.888, 'tsk_prod_lam0.3': 0.88, 'tsk_prod_lam0.0': 0.878, 'moe_lin_lam0.0': 0.876, 'moe_lin_lam0.3': 0.874, 'tsk_min_lam0.3': 0.872, 'tsk_min_lam0.0': 0.867, 'LR': 0.854}
+mean rank (1=best): {'MLP': 3.19, 'HGB': 4.44, 'RF': 4.47, 'tsk_prod_lam0.3': 4.58, 'tsk_prod_lam0.0': 4.97, 'moe_lin_lam0.0': 6.17, 'moe_lin_lam0.3': 6.22, 'tsk_min_lam0.3': 6.39, 'tsk_min_lam0.0': 7.17, 'LR': 7.39}
+Friedman p = 0.00013203611611219812
+  Wilcoxon tsk_prod_lam0.0 vs LR: mean diff +0.024, p=0.054
+  Wilcoxon tsk_prod_lam0.0 vs HGB: mean diff -0.009, p=0.360
+  Wilcoxon tsk_prod_lam0.0 vs RF: mean diff -0.017, p=0.154
+  Wilcoxon tsk_prod_lam0.0 vs MLP: mean diff -0.013, p=0.024
+  Wilcoxon tsk_prod_lam0.3 vs LR: mean diff +0.026, p=0.009
+  Wilcoxon tsk_prod_lam0.3 vs HGB: mean diff -0.008, p=0.551
+  Wilcoxon tsk_prod_lam0.3 vs RF: mean diff -0.015, p=0.393
+  Wilcoxon tsk_prod_lam0.3 vs MLP: mean diff -0.011, p=0.005
+  Wilcoxon moe_lin_lam0.0 vs LR: mean diff +0.022, p=0.119
+  Wilcoxon moe_lin_lam0.0 vs HGB: mean diff -0.012, p=0.347
+  Wilcoxon moe_lin_lam0.0 vs RF: mean diff -0.019, p=0.338
+  Wilcoxon moe_lin_lam0.0 vs MLP: mean diff -0.015, p=0.001
+  Wilcoxon tsk_min_lam0.0 vs LR: mean diff +0.013, p=0.417
+  Wilcoxon tsk_min_lam0.0 vs HGB: mean diff -0.021, p=0.060
+  Wilcoxon tsk_min_lam0.0 vs RF: mean diff -0.028, p=0.007
+  Wilcoxon tsk_min_lam0.0 vs MLP: mean diff -0.024, p=0.000
+
+== Certified fraction vs number of rules (tsk_prod, lam=0, eps=0.02, fold 0)
+R                     2      4      8      16
+dataset                                      
+banknote           0.982  0.884  0.673  0.520
+breast_w           0.978  0.854  0.606  0.350
+digits             0.989  0.872  0.886  0.889
+ecoli              0.971  0.985  0.691  0.574
+glass              0.628  0.488  0.419  0.465
+haberman           0.758  0.806  0.726  0.613
+ionosphere         0.901  0.577  0.690  0.507
+mammography        0.766  0.211  0.120  0.096
+new_thyroid        0.953  0.907  0.465  0.256
+oil_spill          1.000  0.782  0.809  0.585
+phoneme            0.713  0.635  0.430  0.310
+pima               0.773  0.571  0.506  0.403
+sonar              0.738  0.738  0.571  0.714
+wdbc               0.851  0.404  0.395  0.289
+wheat_seeds        0.952  0.619  0.500  0.548
+wine               1.000  0.889  0.639  0.556
+winequality_red    0.644  0.322  0.266  0.241
+winequality_white  0.342  0.240  0.196  0.116
+mean: {2: 0.83, 4: 0.655, 8: 0.533, 16: 0.446}
+datasets where cert is non-increasing in R: 10 / 18
+
+== HGB+SHAP top-1 feature, empirically stable fraction under 30 random perturbations (eps=0.02, fold 0)
+          dataset  emp_stable
+         banknote       0.847
+         breast_w       1.000
+            ecoli       0.706
+            glass       0.419
+         haberman       0.387
+       ionosphere       0.732
+      mammography       0.053
+      new_thyroid       0.628
+        oil_spill       0.207
+          phoneme       0.373
+             pima       0.420
+            sonar       0.667
+      wheat_seeds       0.595
+             wine       0.833
+  winequality_red       0.373
+winequality_white       0.373
+             wdbc       0.711
+           digits       1.000
+mean: 0.574

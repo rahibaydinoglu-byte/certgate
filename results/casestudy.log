@@ -1,0 +1,207 @@
+== banknote: {
+ "lam=0.0": {
+  "R": 6,
+  "acc": 0.9927272727272727,
+  "cert_0_02": 0.7636363636363637,
+  "radius_median": 0.0497894287109375,
+  "distinguishability_mean": 0.14522106660092143,
+  "distinguishability_max": 0.28226053554662306
+ },
+ "lam=0.3": {
+  "R": 6,
+  "acc": 1.0,
+  "cert_0_02": 0.8909090909090909,
+  "radius_median": 0.0652618408203125,
+  "distinguishability_mean": 0.5442032875879145,
+  "distinguishability_max": 0.7396645050630367
+ },
+ "lam=0.3,sep": {
+  "R": 6,
+  "acc": 1.0,
+  "cert_0_02": 0.8981818181818182,
+  "radius_median": 0.062164306640625,
+  "distinguishability_mean": 0.29683152495763554,
+  "distinguishability_max": 0.30175833656569073
+ }
+}
+{
+ "certified": {
+  "rule": "IF variance is Medium AND skewness is Low AND curtosis is High AND entropy is High",
+  "x": [
+   -3.718,
+   -8.509,
+   12.363,
+   -0.955
+  ],
+  "prediction": "class 1",
+  "radius": 0.229278564453125,
+  "radius_original_units": [
+   3.179,
+   6.127,
+   5.322,
+   2.522
+  ]
+ },
+ "refused": {
+  "rule": "IF variance is Medium AND skewness is Low AND curtosis is High AND entropy is High",
+  "x": [
+   -1.074,
+   -6.311,
+   5.355,
+   0.805
+  ],
+  "prediction": "class 1",
+  "counterexample": [
+   -1.352,
+   -5.777,
+   4.891,
+   1.025
+  ],
+  "change": [
+   -0.277,
+   0.534,
+   -0.464,
+   0.22
+  ],
+  "new_rule": "IF variance is Medium AND skewness is Medium AND curtosis is Medium AND entropy is Medium",
+  "prediction_at_counterexample": "class 1"
+ }
+}
+== haberman: {
+ "lam=0.0": {
+  "R": 6,
+  "acc": 0.6935483870967742,
+  "cert_0_02": 0.7903225806451613,
+  "radius_median": 0.04547882080078125,
+  "distinguishability_mean": 0.010038057087821137,
+  "distinguishability_max": 0.0170557200656567
+ },
+ "lam=0.3": {
+  "R": 6,
+  "acc": 0.7096774193548387,
+  "cert_0_02": 0.8548387096774194,
+  "radius_median": 0.05457305908203125,
+  "distinguishability_mean": 0.10690756836384331,
+  "distinguishability_max": 0.1342815286575498
+ },
+ "lam=0.3,sep": {
+  "R": 6,
+  "acc": 0.7096774193548387,
+  "cert_0_02": 0.8548387096774194,
+  "radius_median": 0.05368804931640625,
+  "distinguishability_mean": 0.10787528576957611,
+  "distinguishability_max": 0.14380765036047924
+ }
+}
+{
+ "certified": {
+  "rule": "IF age is Medium AND year of operation is Medium AND positive nodes is High",
+  "x": [
+   53.0,
+   63.0,
+   24.0
+  ],
+  "prediction": "died < 5 y",
+  "radius": 0.2496490478515625,
+  "radius_original_units": [
+   13.231,
+   2.746,
+   12.982
+  ]
+ },
+ "refused": {
+  "rule": "IF age is High AND year of operation is High AND positive nodes is Medium",
+  "x": [
+   54.0,
+   66.0,
+   0.0
+  ],
+  "prediction": "survived >= 5 y",
+  "counterexample": [
+   52.94,
+   65.78,
+   0.0
+  ],
+  "change": [
+   -1.06,
+   -0.22,
+   0.0
+  ],
+  "new_rule": "IF age is Low AND year of operation is High AND positive nodes is Medium",
+  "prediction_at_counterexample": "survived >= 5 y"
+ }
+}
+== new_thyroid: {
+ "lam=0.0": {
+  "R": 4,
+  "acc": 0.9534883720930233,
+  "cert_0_02": 0.5116279069767442,
+  "radius_median": 0.0230560302734375,
+  "distinguishability_mean": 0.1484335618238657,
+  "distinguishability_max": 0.24638189414487396
+ },
+ "lam=0.3": {
+  "R": 4,
+  "acc": 0.9767441860465116,
+  "cert_0_02": 0.9302325581395349,
+  "radius_median": 0.079254150390625,
+  "distinguishability_mean": 0.2632455847932832,
+  "distinguishability_max": 0.7068668245968961
+ },
+ "lam=0.3,sep": {
+  "R": 4,
+  "acc": 0.9767441860465116,
+  "cert_0_02": 0.9302325581395349,
+  "radius_median": 0.084564208984375,
+  "distinguishability_mean": 0.1758201217940963,
+  "distinguishability_max": 0.2928412520568713
+ }
+}
+{
+ "certified": {
+  "rule": "IF T3-resin uptake is Low AND total thyroxin is High AND total triiodothyronine is High AND basal TSH is Low AND max. TSH difference is Low",
+  "x": [
+   88.0,
+   24.1,
+   5.5,
+   0.8,
+   0.1
+  ],
+  "prediction": "hyper",
+  "radius": 0.2499847412109375,
+  "radius_original_units": [
+   19.749,
+   6.125,
+   2.425,
+   14.024,
+   14.249
+  ]
+ },
+ "refused": {
+  "rule": "IF T3-resin uptake is Medium AND total thyroxin is Medium AND total triiodothyronine is Medium AND basal TSH is Medium AND max. TSH difference is Medium",
+  "x": [
+   107.0,
+   13.8,
+   1.5,
+   1.0,
+   1.9
+  ],
+  "prediction": "normal",
+  "counterexample": [
+   105.42,
+   14.29,
+   1.694,
+   0.3,
+   0.76
+  ],
+  "change": [
+   -1.58,
+   0.49,
+   0.194,
+   -0.7,
+   -1.14
+  ],
+  "new_rule": "IF T3-resin uptake is Low AND total thyroxin is High AND total triiodothyronine is High AND basal TSH is Low AND max. TSH difference is Low",
+  "prediction_at_counterexample": "hyper"
+ }
+}
